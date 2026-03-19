@@ -4,14 +4,9 @@
 
 Lista* lista_crear()
 {
-    
-    /*
-    TODO:
-
-    1 Crear un apuntador a lista
-    2 Reswevar memoria para lista
-    3 Devolver la lista
-    */
+    Lista *l;
+    l=(Lista*)malloc(sizeof(Lista);
+    return l;
 }
 
 int lista_vacia(Lista* lista)

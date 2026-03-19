@@ -1,3 +1,5 @@
+#include <stdlib>
+#include <stdbool>
 #include "cola.h"
 
 Cola* cola_crear()
@@ -7,42 +9,98 @@ Cola* cola_crear()
 
 int cola_vacia(Cola* cola)
 {
-    /*
-    TODO
-    usar vaciar_lista
-    */
+    return lista_vacia((Lista*)cola);
 }
 
 void cola_enqueue(Cola* cola, int dato)
 {
-    /*
-    TODO
-    usar lista_insertar_tail
-    */
+    lista_insertar_tail((Lista*)cola, dato);
 }
 
 int cola_dequeue(Cola* cola)
 {
-    /*
-    TODO
-    usar lista_eliminar_head
-    */
-    return -1;
+    return lista_eliminar_head((Lista*)cola);
 }
 
 int cola_frente(Cola* cola)
 {
-    /*
-    TODO
-    regresar dato del head
-    */
-    return -1;
+    if (cola_vacia(cola)) return -1;
+    return ((Lista*)cola)->head->dato;
 }
 
 void cola_destruir(Cola* cola)
 {
-    /*
-    TODO
-    usar lista_destruir
-    */
+    lista_destruir((Lista*)cola);
 }
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Cola* cola_crear()
+{
+    return (Cola*)lista_crear();
+}
+
+int cola_vacia(Cola* cola)
+{
+    return lista_vacia((Lista*)cola);
+}
+
+void cola_enqueue(Cola* cola, int dato)
+{
+    lista_insertar_tail((Lista*)cola, dato);
+}
+
+int cola_dequeue(Cola* cola)
+{
+    return lista_eliminar_head((Lista*)cola);
+}
+
+int cola_frente(Cola* cola)
+{
+    if (cola_vacia(cola)) return -1;
+    return ((Lista*)cola)->head->dato;
+}
+
+void cola_destruir(Cola* cola)
+{
+    lista_destruir((Lista*)cola);
+}
+*/

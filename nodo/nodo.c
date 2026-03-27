@@ -3,9 +3,16 @@
 
 Nodo* nodo_crear(int dato)
 {
-    // Todo: implementar la función }
-
+    Nodo *newNodo = (Nodo*)malloc(Nodo));
+    if(newNodo != NULL) {
+        newNodo->dato;
+        newNodo->siguiente;
+    }
+    return newNodo;
+}
 void nodo_destruir(Nodo* nodo)
 {
-    // Todo: implementar la función 
+    if(nodo != NULL) {
+        free(nodo);
+    }
 }

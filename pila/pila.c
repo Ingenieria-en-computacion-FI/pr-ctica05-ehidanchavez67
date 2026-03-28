@@ -1,49 +1,47 @@
 #include "pila.h"
+#include <stdilib.h>
+#include <stdbool.h>
+#include "../lista/lista.h"
 
-Pila* pila_crear()
+Pila* pila_crear() 
 {
-    /*
-    TODO
-    usar crear lista
-    */
+   return(pila*)lista_crear();
 }
 
 int pila_vacia(Pila* pila)
 {
-    /*
-    TODO
-    usar lista_vacia
-    */
+   if(pila == NULL || lista_vacia((Lista*)pila)) {
+    return 1;
+   }
+   return 0;
 }
 
 void pila_push(Pila* pila, int dato)
 {
-    /*
-    TODO
-    usar lista_insertar_tail
-    */
+    if(pila != NULL) {
+        lista_insertar_tail((Lista*)pila,dato);
+    }
 }
 
 int pila_pop(Pila* pila)
 {
-    /*
-    TODO
-    usar lista_eliminar_tail
-    */
+    if (pila_vacia(pila)) {
     return -1;
+    }
+    return lista_eliminar_tail((Lista*)pila);
 }
 
 int pila_top(Pila* pila)
 {
-    /*
-    TODO
-    regresar dato del tail
-    */
+    if(pila_vacia(pila)) {
     return -1;
+    }
+    return ((Lista*)pila)->tail->dato;
 }
 
 void pila_destruir(Pila* pila)
 {
-    // TODO
-    // Usar lista destruir
+    if(pila != NULL) {
+        lista_destruir((Lista*)pila);
+    }
 }

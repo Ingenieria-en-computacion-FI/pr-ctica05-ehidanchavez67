@@ -22,7 +22,7 @@ void lista_insertar_head(Lista* lista, int dato){
     if (nuevo == NULL) return;
 
     nuevo->dato = dato;
-    nuevo->sig = lista->head;
+    nuevo->siguiente = lista->head;
     
     if (lista_vacia(lista)) {
         lista->tail = nuevo;
@@ -36,13 +36,13 @@ void lista_insertar_tail(Lista* lista, int dato)
     Nodo* nuevo = (Nodo*)malloc(sizeof(Nodo));
     if (nuevo == NULL) return;
     nuevo->dato = dato;
-    nuevo->sig = NULL;
+    nuevo->siguiente = NULL;
 
     if (lista_vacia(lista)) {
         lista->head = nuevo;
         lista->tail = nuevo;
     } else {
-        lista->tail->sig = nuevo;
+        lista->tail->siguiente = nuevo;
         lista->tail = nuevo;
     }
 }
@@ -53,7 +53,7 @@ int lista_eliminar_head(Lista* lista)
     Nodo* temp = lista->head;
     int dato = temp->dato;
 
-    lista -> head = lista->head->sig;
+    lista -> head = lista->head->siguiente;
     if (lista->head == NULL) {
         lista->tail = NULL;
     }
@@ -76,12 +76,12 @@ int lista_eliminar_tail(Lista* lista)
     } 
     else {
         Nodo* actual = lista->head;
-        while (actual->sig != lista->tail) {
-            actual = actual->sig;
+        while (actual->siguiente != lista->tail) {
+            actual = actual->siguiente;
         }
         
         dato = elim->dato;
-        actual->sig = NULL;
+        actual->siguiente = NULL;
         lista->tail = actual;
         
         free(elim);
@@ -96,7 +96,7 @@ void lista_imprimir(Lista* lista)
     while(actual != NULL)
     {
         printf("%d -> ", actual -> dato);
-        actual = actual->sig;
+        actual = actual->siguiente;
     }
     printf("NULL\n");
 }

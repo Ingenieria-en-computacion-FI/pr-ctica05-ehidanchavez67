@@ -3,10 +3,10 @@
 
 Nodo* nodo_crear(int dato)
 {
-    Nodo *newNodo = (Nodo*)malloc(Nodo));
+    Nodo *newNodo = (Nodo*)malloc(sizeof(Nodo));
     if(newNodo != NULL) {
-        newNodo->dato;
-        newNodo->siguiente;
+        newNodo->dato=dato;
+        newNodo->siguiente=NULL;
     }
     return newNodo;
 }

@@ -1,11 +1,11 @@
 #include "pila.h"
-#include <stdilib.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include "../lista/lista.h"
 
 Pila* pila_crear() 
 {
-   return(pila*)lista_crear();
+   return(Pila*)lista_crear();
 }
 
 int pila_vacia(Pila* pila)
